@@ -24,12 +24,12 @@ Ask only for what is missing: area (county), date, and start/end location. Defau
 5. **Verify the link in Chrome.** Load it and read the page: any "Google Maps can't find" text names the bad stop. Fix or drop that stop, then record total time and miles.
 6. **Optimize order** when asked: see `browser-snippets.md`. Reload the new link and report the before and after numbers. Report a small gain as small.
 7. **Check closing times** against stop order. Flag any stop likely to be reached after it closes.
-8. **Write the pages** into `YYYY-MM-DD/` from `template.html`: `route-YYYY-MM-DD.html` and, once anything is removed, `removed-stops-YYYY-MM-DD.html`. Every row gets address, type, opens, closes, and a listing link.
+8. **Write the pages** into `YYYY-MM-DD/` from `template.html`: `route-YYYY-MM-DD.html` and, once anything is removed, `removed-stops-YYYY-MM-DD.html`. Every row gets address, type, opens, closes, a listing link, and a `data-stop` attribute holding the stop text that resolved in Maps. Do not hard-code a start location or a Maps link in a page: the shared `assets/sale-route.js` builds the links from the reader's start/end input (default `Current Location`) and adds a per-row "Start map link from here" button. These pages are published, so keep the user's home address out of them.
 9. **Open and check the pages.** See "Local files" below.
 
 ## Editing a route
 
-When the user removes a stop, move its row to the removed-stops page. Renumber both tables, rebuild both links, reload both in Maps, and update the miles and time in each page.
+When the user removes a stop, move its row to the removed-stops page. Renumber both tables, update the stop counts, and reload both new stop lists in Maps to confirm they still resolve.
 
 ## Data to record per sale
 
