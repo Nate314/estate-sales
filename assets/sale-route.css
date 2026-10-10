@@ -11,7 +11,10 @@ h1 { margin: 0 0 4px; font-size: 1.6rem; }
 .field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .btn { display: inline-block; padding: 12px 20px; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; }
 .btn:hover { filter: brightness(1.1); }
-.btn-sm { padding: 5px 12px; font-size: 0.85rem; }
+.btn[aria-disabled="true"] { background: var(--muted); cursor: not-allowed; }
+td.check input { width: 20px; height: 20px; margin: 0; vertical-align: middle; accent-color: var(--accent); cursor: pointer; }
+tr.visited td:not(.check) { opacity: 0.45; }
+tr.visited td.addr { text-decoration: line-through; }
 .wrap { margin-top: 20px; overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
 table { width: 100%; border-collapse: collapse; }
 th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
@@ -24,4 +27,8 @@ td a:not(.btn) { color: var(--accent); }
 .estate { background: var(--estate); }
 .garage { background: var(--garage); }
 .none { color: var(--muted); font-style: italic; }
+.date { margin-top: 20px; padding: 16px 20px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+.date h2 { margin: 0 0 8px; font-size: 1.1rem; }
+.date ul { margin: 0; padding-left: 20px; }
+.date a { color: var(--accent); }
 .note { margin-top: 16px; color: var(--muted); font-size: 0.9rem; }
