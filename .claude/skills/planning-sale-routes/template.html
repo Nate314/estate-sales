@@ -3,14 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{TITLE}}</title>
-<!-- Pages live in YYYY-MM-DD/ at the repo root, one level below assets/. -->
+<title>Sale Route</title>
 <link rel="stylesheet" href="../assets/sale-route.css">
 </head>
 <body>
 <main>
-  <h1>{{HEADING}}</h1>
-  <p class="sub">{{STOP_COUNT_AND_AREA}} The route starts and ends at the location you enter below.</p>
+  <h1 id="heading"></h1>
+  <p class="sub"><span id="summary"></span> <span id="progress"></span></p>
 
   <div class="controls">
     <div class="field">
@@ -23,19 +22,13 @@
   <div class="wrap">
     <table>
       <thead>
-        <tr><th>#</th><th>Address</th><th>Type</th><th>Opens</th><th>Closes</th><th>Listing</th></tr>
+        <tr><th>Visited?</th><th>#</th><th>Address</th><th>Type</th><th>Opens</th><th>Closes</th><th>Listing</th></tr>
       </thead>
-      <tbody>
-        <!-- One row per stop, in route order. data-stop is the exact text that resolved in Google Maps.
-             sale-route.js builds every Maps link and adds the "Start map link from here" column.
-             Type tag class is "estate" or "garage". Use class="none" for "not listed". -->
-        <tr data-stop="{{MAPS_STOP_TEXT}}"><td class="num">1</td><td class="addr">{{ADDRESS}}</td><td><span class="tag estate">Estate</span></td><td>{{OPENS}}</td><td>{{CLOSES}}</td><td><a target="_blank" rel="noopener" href="{{LISTING_URL}}">EstateSales.net</a></td></tr>
-        <tr data-stop="{{MAPS_STOP_TEXT}}"><td class="num">2</td><td class="addr">{{ADDRESS}}</td><td><span class="tag garage">Garage</span></td><td>{{OPENS}}</td><td class="none">not listed</td><td><a target="_blank" rel="noopener" href="{{LISTING_URL}}">Craigslist</a></td></tr>
-      </tbody>
+      <tbody id="stops"></tbody>
     </table>
   </div>
 
-  <p class="note">{{NOTE: sources, date checked, cross-street-only stops, anything left out}}</p>
+  <p class="note" id="note"></p>
 </main>
 <script src="../assets/sale-route.js"></script>
 </body>

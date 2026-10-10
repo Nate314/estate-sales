@@ -1,0 +1,107 @@
+{
+  "title": "Sale Route: Sat, Oct 10, 2026",
+  "heading": "Sale Route: Saturday, Oct 10, 2026",
+  "summary": "Estate and garage sales in Johnson County.",
+  "note": "Sources: estatesales.net (estate sales) and Craigslist Kansas City (garage sales), checked Oct 9, 2026. Stops 1, 6 and 12 were posted as cross streets only, so look for signs.",
+  "stops": [
+    {
+      "address": "121st St & Wedd St, Overland Park (Nottingham Forest)",
+      "mapsQuery": "W 121st St and Wedd St, Overland Park, KS",
+      "type": "garage",
+      "opens": "8:30am",
+      "closes": null,
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/overland-park-big-multi-family-garage/9AyJgyh66nNEnY7foEoiyR" }]
+    },
+    {
+      "address": "12560 Grandview St, Overland Park",
+      "mapsQuery": "12560 Grandview St, Overland Park, KS",
+      "type": "garage",
+      "opens": "8am",
+      "closes": "5pm",
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/overland-park-fundraiser-garage-sale/qeCH67VxLwxFSQq5yxWUrW" }]
+    },
+    {
+      "address": "14227 Eby, Overland Park",
+      "mapsQuery": "14227 Eby St, Overland Park, KS 66221",
+      "type": "estate",
+      "opens": "8am",
+      "closes": "2pm",
+      "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Overland-Park/66221/5083395" }]
+    },
+    {
+      "address": "14558 S Parkhill St, Olathe",
+      "mapsQuery": "14558 S Parkhill St, Olathe, KS",
+      "type": "garage",
+      "opens": "8am",
+      "closes": "3pm",
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/overland-park-huge-garage-sale/brS988zQi1bfFPxoz81xca" }]
+    },
+    {
+      "address": "12408 W 139th St, Overland Park",
+      "mapsQuery": "12408 W 139th St, Overland Park, KS 66221",
+      "type": "garage",
+      "opens": "9am",
+      "closes": "4pm",
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/overland-park-home-decor-garage-sale/9PHBMQdwkE7kGNXqfRLbiG" }]
+    },
+    {
+      "address": "W 115th St near Ballentine, Overland Park",
+      "mapsQuery": "W 115th St and Ballentine St, Overland Park, KS",
+      "type": "garage",
+      "opens": "9am",
+      "closes": "4pm",
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/overland-park-garage-sale/tKdpTLzP7sGYmraj1ai8RS" }]
+    },
+    {
+      "address": "9419 Hayes Dr, Overland Park",
+      "mapsQuery": "9419 Hayes Dr, Overland Park, KS 66212",
+      "type": "garage",
+      "opens": "8am",
+      "closes": null,
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/overland-park-four-household-garage-sale/hEtp7vG6yPnZu1Wo34yTpR" }]
+    },
+    {
+      "address": "6682 Lowell Dr, Mission",
+      "mapsQuery": "6682 Lowell Dr, Mission, KS 66202",
+      "type": "estate",
+      "opens": "9am",
+      "closes": "5pm",
+      "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Mission/66202/5104920" }]
+    },
+    {
+      "address": "6801 Cottonwood Dr, Shawnee",
+      "mapsQuery": "6801 Cottonwood Dr, Shawnee, KS",
+      "type": "garage",
+      "opens": "9am",
+      "closes": "4pm",
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/shawnee-multi-family-garage-sale/cFA3hBrUhhPx4tC79RvNB3" }]
+    },
+    {
+      "address": "6719 Hauser, Shawnee",
+      "mapsQuery": "6719 Hauser St, Shawnee, KS 66216",
+      "type": "estate",
+      "opens": "9am",
+      "closes": "5pm",
+      "listings": [
+        { "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Shawnee/66216/5094639" },
+        { "label": "Craigslist", "url": "https://www.craigslist.org/view/d/shawnee-fun-sale-in-large-bed-home/31Duywf2Lgbxhqeb89wS4t" }
+      ]
+    },
+    {
+      "address": "5409 Westgate, Shawnee",
+      "mapsQuery": "5409 Westgate St, Shawnee, KS 66216",
+      "type": "estate",
+      "opens": "10am",
+      "closes": "3pm",
+      "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Shawnee/66216/5107740" }]
+    },
+    {
+      "address": "51st Terrace & Nieman, Shawnee",
+      "mapsQuery": "W 51st Ter and Nieman Rd, Shawnee, KS",
+      "type": "garage",
+      "opens": "9am",
+      "closes": "4pm",
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/shawnee-garage-sale/bD2Jznqfv1kaw8UE3snqCk" }]
+    }
+  ]
+}

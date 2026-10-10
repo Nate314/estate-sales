@@ -24,12 +24,37 @@ Ask only for what is missing: area (county), date, and start/end location. Defau
 5. **Verify the link in Chrome.** Load it and read the page: any "Google Maps can't find" text names the bad stop. Fix or drop that stop, then record total time and miles.
 6. **Optimize order** when asked: see `browser-snippets.md`. Reload the new link and report the before and after numbers. Report a small gain as small.
 7. **Check closing times** against stop order. Flag any stop likely to be reached after it closes.
-8. **Write the pages** into `YYYY-MM-DD/` from `template.html`: `route-YYYY-MM-DD.html` and, once anything is removed, `removed-stops-YYYY-MM-DD.html`. Every row gets address, type, opens, closes, a listing link, and a `data-stop` attribute holding the stop text that resolved in Maps. Do not hard-code a start location or a Maps link in a page: the shared `assets/sale-route.js` builds the links from the reader's start/end input (default `Current Location`) and adds a per-row "Start map link from here" button. These pages are published, so keep the user's home address out of them.
+8. **Write the pages** into `YYYY-MM-DD/`: `route-YYYY-MM-DD` and, once anything is removed, `removed-stops-YYYY-MM-DD`. Each page is two files with the same name: an `.html` copied unchanged from `template.html`, and a `.json` holding the content (see "Page data" below). Add the new pages to `pages.json` at the repo root, newest date first, so `index.html` lists them. These pages are published, so keep the user's home address out of them.
 9. **Open and check the pages.** See "Local files" below.
+
+## Page data
+
+Never put stops, a start location, or a Maps link in the HTML. `assets/sale-route.js` loads `<page name>.json`, draws the table, and builds the Maps link from the reader's start/end input (default `Current Location`) and the stops not yet ticked "Visited?". Ticks are saved in localStorage under the page name, so each date keeps its own.
+
+```json
+{
+  "title": "Sale Route: Sat, Oct 10, 2026",
+  "heading": "Sale Route: Saturday, Oct 10, 2026",
+  "summary": "Estate and garage sales in Johnson County.",
+  "note": "Sources, date checked, cross-street-only stops, anything left out.",
+  "stops": [
+    {
+      "address": "121st St & Wedd St, Overland Park (Nottingham Forest)",
+      "mapsQuery": "W 121st St and Wedd St, Overland Park, KS",
+      "type": "garage",
+      "opens": "8:30am",
+      "closes": null,
+      "listings": [{ "label": "Craigslist", "url": "https://..." }]
+    }
+  ]
+}
+```
+
+`stops` is in route order. `mapsQuery` is the exact text that resolved in Google Maps and must be unique within a page. `type` is `estate` or `garage`. A `null` time renders as "not listed".
 
 ## Editing a route
 
-When the user removes a stop, move its row to the removed-stops page. Renumber both tables, update the stop counts, and reload both new stop lists in Maps to confirm they still resolve.
+When the user removes a stop, move its entry from the route JSON to the removed-stops JSON, and reload both new stop lists in Maps to confirm they still resolve.
 
 ## Data to record per sale
 
@@ -55,7 +80,7 @@ Write `not listed` when the posting gives no time. Never guess a closing time.
 
 ## Local files
 
-Open pages for the user with `Start-Process chrome "file:///C:/path/page.html"`. To inspect them yourself, serve the folder with `python -m http.server 8765 --bind 127.0.0.1` in the background, load `http://127.0.0.1:8765/...`, check row count, link count, and horizontal overflow, then stop the server. Say plainly which window sizes were not checked.
+The pages fetch JSON, so they do not work from `file:///`. Serve the repo root with `python -m http.server 8765 --bind 127.0.0.1` in the background, load `http://127.0.0.1:8765/index.html` and each new page, check row count, the Maps link, a "Visited?" tick surviving a reload, and horizontal overflow, then stop the server. The published copies are at `https://nate314.github.io/estate-sales/`. Say plainly which window sizes were not checked.
 
 ## Common mistakes
 

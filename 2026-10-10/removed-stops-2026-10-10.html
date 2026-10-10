@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Removed Stops: Sat, Oct 10, 2026</title>
+<title>Sale Route</title>
 <link rel="stylesheet" href="../assets/sale-route.css">
 </head>
 <body>
 <main>
-  <h1>Removed Stops: Saturday, Oct 10, 2026</h1>
-  <p class="sub">13 sales removed from the main route. The route starts and ends at the location you enter below.</p>
+  <h1 id="heading"></h1>
+  <p class="sub"><span id="summary"></span> <span id="progress"></span></p>
 
   <div class="controls">
     <div class="field">
@@ -22,27 +22,13 @@
   <div class="wrap">
     <table>
       <thead>
-        <tr><th>#</th><th>Address</th><th>Type</th><th>Opens</th><th>Closes</th><th>Listing</th></tr>
+        <tr><th>Visited?</th><th>#</th><th>Address</th><th>Type</th><th>Opens</th><th>Closes</th><th>Listing</th></tr>
       </thead>
-      <tbody>
-        <tr data-stop="2700 W 118th St, Leawood, KS"><td class="num">1</td><td class="addr">2700 W 118th St, Leawood (Hallbrook)</td><td><span class="tag garage">Garage</span></td><td class="none">not listed</td><td class="none">not listed</td><td><a target="_blank" rel="noopener" href="https://www.craigslist.org/view/d/leawood-annual-gerbel-family-garage-sale/5YZHVrvR3895e262t2Des8">Craigslist</a></td></tr>
-        <tr data-stop="8802 Slater St, Overland Park, KS"><td class="num">2</td><td class="addr">8802 Slater St, Overland Park</td><td><span class="tag garage">Garage</span></td><td>9am</td><td>3pm</td><td><a target="_blank" rel="noopener" href="https://www.craigslist.org/view/d/overland-park-overland-park-garage-sale/7CRg2G5cXkiF6qgU9CJNXg">Craigslist</a></td></tr>
-        <tr data-stop="8029 High Dr, Leawood, KS"><td class="num">3</td><td class="addr">8029 High Dr, Leawood</td><td><span class="tag garage">Garage</span></td><td>8am</td><td class="none">not listed</td><td><a target="_blank" rel="noopener" href="https://www.craigslist.org/view/d/leawood-lots-of-cool-stuff/vqUZHM63ykBheTzYNsmyG6">Craigslist</a></td></tr>
-        <tr data-stop="7419 State Line Rd, Kansas City, MO"><td class="num">4</td><td class="addr">7419 State Line Rd, Kansas City, MO (on the county line)</td><td><span class="tag garage">Garage</span></td><td>8am</td><td class="none">not listed</td><td><a target="_blank" rel="noopener" href="https://www.craigslist.org/view/d/kansas-city-big-sale-at-7419-state-line/mKwWHgJ1K8fCFv1XDvNeiT">Craigslist</a></td></tr>
-        <tr data-stop="6558 W 51st St, Mission, KS"><td class="num">5</td><td class="addr">6558 W 51st St, Mission</td><td><span class="tag garage">Garage</span></td><td>9am</td><td>2pm</td><td><a target="_blank" rel="noopener" href="https://www.craigslist.org/view/d/mission-multi-family-garage-sale-in/1emGNsqEbTE4KECJikPM4s">Craigslist</a></td></tr>
-        <tr data-stop="8735 Corliss Rd, De Soto, KS 66018"><td class="num">6</td><td class="addr">8735 Corliss Rd, De Soto</td><td><span class="tag estate">Estate</span></td><td>7:30am</td><td>12pm</td><td><a target="_blank" rel="noopener" href="https://www.estatesales.net/KS/De-Soto/66018/5091744">EstateSales.net</a></td></tr>
-        <tr data-stop="21170 W 123rd St, Olathe, KS"><td class="num">7</td><td class="addr">21170 W 123rd St, Olathe</td><td><span class="tag garage">Garage</span></td><td>8am</td><td>12pm</td><td><a target="_blank" rel="noopener" href="https://www.craigslist.org/view/d/olathe-garage-sale-everything-priced-to/uqAEexJqTUTwXGWq3YUb7h">Craigslist</a></td></tr>
-        <tr data-stop="413 S Ridge Dr, Olathe, KS"><td class="num">8</td><td class="addr">413 S Ridge Dr, Olathe (vinyl records)</td><td><span class="tag garage">Garage</span></td><td>7am</td><td>5pm</td><td><a target="_blank" rel="noopener" href="https://www.craigslist.org/view/d/olathe-huge-day-vinyl-records-fri-sun/iz8Lf1RRG2vteXNtFwRbFq">Craigslist</a></td></tr>
-        <tr data-stop="220 E Spruce St, Olathe, KS"><td class="num">9</td><td class="addr">220 E Spruce St, Olathe</td><td><span class="tag garage">Garage</span></td><td>8am</td><td class="none">not listed ("runs all day")</td><td><a target="_blank" rel="noopener" href="https://www.craigslist.org/view/d/olathe-garage-sale-olathe-ks-october/m8XL1ySYbV3A4LMPQzUmzq">Craigslist</a></td></tr>
-        <tr data-stop="17143 W 161st St, Olathe, KS"><td class="num">10</td><td class="addr">17143 W 161st St, Olathe</td><td><span class="tag garage">Garage</span></td><td>8am</td><td class="none">not listed</td><td><a target="_blank" rel="noopener" href="https://www.craigslist.org/view/d/olathe-teen-clothes-sale-plus-more/4HYWcMeszZcRssrxJZoU2a">Craigslist</a></td></tr>
-        <tr data-stop="W 191st St and Antioch Rd, Stilwell, KS"><td class="num">11</td><td class="addr">191st &amp; Antioch, Stilwell</td><td><span class="tag garage">Garage</span></td><td>9am</td><td>1pm</td><td><a target="_blank" rel="noopener" href="https://www.craigslist.org/view/d/stilwell-stilwell-garage-sale/2vX73phKwRrPtvgD5jMNWc">Craigslist</a></td></tr>
-        <tr data-stop="6070 W 198th St, Stilwell, KS 66085"><td class="num">12</td><td class="addr">6070 W 198th St, Stilwell (pop-up at a shop)</td><td><span class="tag estate">Estate</span></td><td>9am</td><td>3pm</td><td><a target="_blank" rel="noopener" href="https://www.estatesales.net/KS/Stilwell/66085/5106606">EstateSales.net</a></td></tr>
-        <tr data-stop="W 159th St and Kenneth Rd, Overland Park, KS"><td class="num">13</td><td class="addr">Meadow Lane near 159th &amp; Kenneth, Stilwell</td><td><span class="tag garage">Garage</span></td><td>8am</td><td>3pm</td><td><a target="_blank" rel="noopener" href="https://www.craigslist.org/view/d/stilwell-garage-sale-saturday-sunday/fX1fWt2FgNqpSUVnnqYfxz">Craigslist</a></td></tr>
-      </tbody>
+      <tbody id="stops"></tbody>
     </table>
   </div>
 
-  <p class="note">Sources: estatesales.net (estate sales) and Craigslist Kansas City (garage sales), checked Oct 9, 2026. Stops 11 and 13 were posted as cross streets only, so look for signs. The order is geographic and does not account for closing times: stops 6 and 7 close at noon. One more Shawnee garage sale, posted as "70th near Cottonwood", was never on the route because Google Maps could not find it.</p>
+  <p class="note" id="note"></p>
 </main>
 <script src="../assets/sale-route.js"></script>
 </body>

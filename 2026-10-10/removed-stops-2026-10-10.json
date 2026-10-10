@@ -1,0 +1,112 @@
+{
+  "title": "Removed Stops: Sat, Oct 10, 2026",
+  "heading": "Removed Stops: Saturday, Oct 10, 2026",
+  "summary": "Sales removed from the main route.",
+  "note": "Sources: estatesales.net (estate sales) and Craigslist Kansas City (garage sales), checked Oct 9, 2026. Stops 11 and 13 were posted as cross streets only, so look for signs. The order is geographic and does not account for closing times: stops 6 and 7 close at noon. One more Shawnee garage sale, posted as \"70th near Cottonwood\", was never on the route because Google Maps could not find it.",
+  "stops": [
+    {
+      "address": "2700 W 118th St, Leawood (Hallbrook)",
+      "mapsQuery": "2700 W 118th St, Leawood, KS",
+      "type": "garage",
+      "opens": null,
+      "closes": null,
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/leawood-annual-gerbel-family-garage-sale/5YZHVrvR3895e262t2Des8" }]
+    },
+    {
+      "address": "8802 Slater St, Overland Park",
+      "mapsQuery": "8802 Slater St, Overland Park, KS",
+      "type": "garage",
+      "opens": "9am",
+      "closes": "3pm",
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/overland-park-overland-park-garage-sale/7CRg2G5cXkiF6qgU9CJNXg" }]
+    },
+    {
+      "address": "8029 High Dr, Leawood",
+      "mapsQuery": "8029 High Dr, Leawood, KS",
+      "type": "garage",
+      "opens": "8am",
+      "closes": null,
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/leawood-lots-of-cool-stuff/vqUZHM63ykBheTzYNsmyG6" }]
+    },
+    {
+      "address": "7419 State Line Rd, Kansas City, MO (on the county line)",
+      "mapsQuery": "7419 State Line Rd, Kansas City, MO",
+      "type": "garage",
+      "opens": "8am",
+      "closes": null,
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/kansas-city-big-sale-at-7419-state-line/mKwWHgJ1K8fCFv1XDvNeiT" }]
+    },
+    {
+      "address": "6558 W 51st St, Mission",
+      "mapsQuery": "6558 W 51st St, Mission, KS",
+      "type": "garage",
+      "opens": "9am",
+      "closes": "2pm",
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/mission-multi-family-garage-sale-in/1emGNsqEbTE4KECJikPM4s" }]
+    },
+    {
+      "address": "8735 Corliss Rd, De Soto",
+      "mapsQuery": "8735 Corliss Rd, De Soto, KS 66018",
+      "type": "estate",
+      "opens": "7:30am",
+      "closes": "12pm",
+      "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/De-Soto/66018/5091744" }]
+    },
+    {
+      "address": "21170 W 123rd St, Olathe",
+      "mapsQuery": "21170 W 123rd St, Olathe, KS",
+      "type": "garage",
+      "opens": "8am",
+      "closes": "12pm",
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/olathe-garage-sale-everything-priced-to/uqAEexJqTUTwXGWq3YUb7h" }]
+    },
+    {
+      "address": "413 S Ridge Dr, Olathe (vinyl records)",
+      "mapsQuery": "413 S Ridge Dr, Olathe, KS",
+      "type": "garage",
+      "opens": "7am",
+      "closes": "5pm",
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/olathe-huge-day-vinyl-records-fri-sun/iz8Lf1RRG2vteXNtFwRbFq" }]
+    },
+    {
+      "address": "220 E Spruce St, Olathe (posting says it runs all day)",
+      "mapsQuery": "220 E Spruce St, Olathe, KS",
+      "type": "garage",
+      "opens": "8am",
+      "closes": null,
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/olathe-garage-sale-olathe-ks-october/m8XL1ySYbV3A4LMPQzUmzq" }]
+    },
+    {
+      "address": "17143 W 161st St, Olathe",
+      "mapsQuery": "17143 W 161st St, Olathe, KS",
+      "type": "garage",
+      "opens": "8am",
+      "closes": null,
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/olathe-teen-clothes-sale-plus-more/4HYWcMeszZcRssrxJZoU2a" }]
+    },
+    {
+      "address": "191st & Antioch, Stilwell",
+      "mapsQuery": "W 191st St and Antioch Rd, Stilwell, KS",
+      "type": "garage",
+      "opens": "9am",
+      "closes": "1pm",
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/stilwell-stilwell-garage-sale/2vX73phKwRrPtvgD5jMNWc" }]
+    },
+    {
+      "address": "6070 W 198th St, Stilwell (pop-up at a shop)",
+      "mapsQuery": "6070 W 198th St, Stilwell, KS 66085",
+      "type": "estate",
+      "opens": "9am",
+      "closes": "3pm",
+      "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Stilwell/66085/5106606" }]
+    },
+    {
+      "address": "Meadow Lane near 159th & Kenneth, Stilwell",
+      "mapsQuery": "W 159th St and Kenneth Rd, Overland Park, KS",
+      "type": "garage",
+      "opens": "8am",
+      "closes": "3pm",
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/stilwell-garage-sale-saturday-sunday/fX1fWt2FgNqpSUVnnqYfxz" }]
+    }
+  ]
+}
