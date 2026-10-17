@@ -14,6 +14,10 @@ Routes for visiting estate sales and garage sales in the Kansas City area, one s
 6. Tick "Visited?" as you go. Visited stops drop out of the Google Maps link, and your ticks are remembered in your browser for that page.
 7. To change the order, drag a row by its handle (⠿), or focus the handle and use the up and down arrow keys. The Google Maps link follows your order, your browser remembers it for that page, and "Reset to the planned order" undoes it.
 
+Your start, end and sale type are remembered in your browser and apply to every date's route.
+
+The round button in the top corner switches between light and dark mode (🌙 / ☀️). Your choice is remembered.
+
 Each route page links back to the list of all routes, and to the other pages for the same date.
 
 Each row shows the address, whether it is an estate sale or a garage sale, the opening and closing times for that day, and a link to the original listing on estatesales.net or Craigslist. "not listed" means the posting gave no time.
