@@ -29,7 +29,7 @@ Ask only for what is missing: area (county), date, and start/end location. Defau
 
 ## Page data
 
-Never put stops, a start location, or a Maps link in the HTML. `assets/sale-route.js` loads `<page name>.json`, draws the table, and builds the Maps link from the reader's start input (default `Current Location`), end input (blank means the same as the start), sale-type filter, and the stops not yet ticked "Visited?". Ticks are saved in localStorage under the page name, so each date keeps its own.
+Never put stops, a start location, or a Maps link in the HTML. `assets/sale-route.js` loads `<page name>.json`, draws the table, and builds the Maps link from the reader's start input (default `Current Location`), end input (blank means the same as the start), sale-type filter, and the stops not yet ticked "Visited?". Ticks are saved in localStorage under the page name, so each date keeps its own. Readers can drag rows to reorder them; that order is saved under the page name plus `-order`, and rows keep their planned stop numbers, so a note can cite stops by number.
 
 ```json
 {

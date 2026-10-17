@@ -22,7 +22,7 @@ Leave earlier date folders alone. They are the record of past weekends.
 
 - Every `.html` page in a date folder is an unchanged copy of the skill's `template.html`. All content lives in the `.json` file with the same name.
 - `assets/sale-route.js` loads that JSON, draws the table, and builds the Google Maps link from the reader's start box (default `Current Location`), end box (blank means the same as the start), sale-type filter, and the stops not yet ticked "Visited?". Pages made before the end box and filter existed still work: their route ends at the start and includes every type.
-- "Visited?" ticks are saved in localStorage under the page name (for example `route-2026-10-10`), so each date keeps its own.
+- "Visited?" ticks are saved in localStorage under the page name (for example `route-2026-10-10`), so each date keeps its own. A reader's drag-and-drop stop order is saved under the page name plus `-order`. Rows keep their planned stop number when moved, so notes that cite stop numbers stay correct.
 - `index.html` and `assets/index.js` list the pages named in `pages.json`.
 - The pages fetch JSON, so they must be served over HTTP. They do not work when opened from disk.
 
