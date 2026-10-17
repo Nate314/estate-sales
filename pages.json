@@ -1,6 +1,12 @@
 {
   "dates": [
     {
+      "label": "Saturday, Oct 17, 2026",
+      "pages": [
+        { "title": "Sale route", "path": "2026-10-17/route-2026-10-17.html" }
+      ]
+    },
+    {
       "label": "Saturday, Oct 10, 2026",
       "pages": [
         { "title": "Sale route", "path": "2026-10-10/route-2026-10-10.html" },
