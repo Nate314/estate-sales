@@ -5,9 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sale Route</title>
 <link rel="stylesheet" href="../assets/sale-route.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#1a5fb4">
+<link rel="icon" href="../assets/icon-192.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="Sale Routes">
 </head>
 <body>
 <main>
+  <nav class="crumbs" id="crumbs"><a href="../">← All routes</a></nav>
   <h1 id="heading"></h1>
   <p class="sub"><span id="summary"></span> <span id="progress"></span> <button id="reset-order" class="link" type="button" hidden>Reset to the planned order</button></p>
 
@@ -43,5 +49,6 @@
   <p class="note" id="note"></p>
 </main>
 <script src="../assets/sale-route.js"></script>
+<script src="../assets/app.js"></script>
 </body>
 </html>

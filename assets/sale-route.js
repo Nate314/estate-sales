@@ -202,6 +202,25 @@ function renderPage(route) {
   typeFilter?.addEventListener('change', updateRoute);
 }
 
+// Adds links to the other pages for the same date (for example the removed
+// stops) next to the "All routes" link, using the site's pages.json.
+function linkSiblingPages() {
+  const ownPath = location.pathname.split('/').slice(-2).join('/');
+  fetch('../pages.json')
+    .then(response => (response.ok ? response.json() : { dates: [] }))
+    .then(index => {
+      const date = index.dates.find(d => d.pages.some(page => page.path === ownPath));
+      const crumbs = document.getElementById('crumbs');
+      date?.pages.filter(page => page.path !== ownPath).forEach(page =>
+        crumbs.append(' · ', el('a', { href: `../${page.path}`, textContent: page.title })));
+    })
+    .catch(() => {
+      // The "All routes" link is enough without it.
+    });
+}
+
+linkSiblingPages();
+
 fetch(`${PAGE_NAME}.json`)
   .then(response => {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
