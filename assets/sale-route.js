@@ -206,7 +206,7 @@ function renderPage(route) {
 // stops) next to the "All routes" link, using the site's pages.json.
 function linkSiblingPages() {
   const ownPath = location.pathname.split('/').slice(-2).join('/');
-  fetch('../pages.json')
+  fetch('../pages.json', { cache: 'no-cache' })
     .then(response => (response.ok ? response.json() : { dates: [] }))
     .then(index => {
       const date = index.dates.find(d => d.pages.some(page => page.path === ownPath));
@@ -221,7 +221,9 @@ function linkSiblingPages() {
 
 linkSiblingPages();
 
-fetch(`${PAGE_NAME}.json`)
+// "no-cache" checks with the server even when the browser holds a copy, so
+// a republished route shows on the next refresh.
+fetch(`${PAGE_NAME}.json`, { cache: 'no-cache' })
   .then(response => {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     return response.json();
