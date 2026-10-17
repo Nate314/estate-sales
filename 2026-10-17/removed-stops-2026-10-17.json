@@ -1,0 +1,24 @@
+{
+  "title": "Removed Stops: Sat, Oct 17, 2026",
+  "heading": "Removed Stops: Saturday, Oct 17, 2026",
+  "summary": "Sales removed from the main route.",
+  "note": "Sources: Craigslist Kansas City (garage sales), checked Oct 16, 2026. Both are in Shawnee near 51st St and Nieman Rd, a few blocks apart. Neither posting lists a closing time.",
+  "stops": [
+    {
+      "address": "5146 Lucille Ln, Shawnee",
+      "mapsQuery": "5146 Lucille Ln, Shawnee, KS",
+      "type": "garage",
+      "opens": "9am",
+      "closes": null,
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/shawnee-garage-sale-shawnee-ks/6wTp82gbfoX5fZkszsPNbD" }]
+    },
+    {
+      "address": "11424 W 51st Terr, Shawnee",
+      "mapsQuery": "11424 W 51st Terrace, Shawnee, KS",
+      "type": "garage",
+      "opens": "8am",
+      "closes": null,
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/shawnee-huge-garage-sale/tP58h1u6KgsCySo35TgpFa" }]
+    }
+  ]
+}
