@@ -3,7 +3,8 @@
     {
       "label": "Saturday, Oct 17, 2026",
       "pages": [
-        { "title": "Sale route", "path": "2026-10-17/route-2026-10-17.html" }
+        { "title": "Sale route", "path": "2026-10-17/route-2026-10-17.html" },
+        { "title": "Removed stops", "path": "2026-10-17/removed-stops-2026-10-17.html" }
       ]
     },
     {

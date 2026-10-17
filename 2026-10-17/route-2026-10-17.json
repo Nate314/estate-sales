@@ -2,7 +2,7 @@
   "title": "Sale Route: Sat, Oct 17, 2026",
   "heading": "Sale Route: Saturday, Oct 17, 2026",
   "summary": "Estate and garage sales in Johnson County.",
-  "note": "Sources: estatesales.net (estate sales) and Craigslist Kansas City (garage sales), checked Oct 16, 2026. Stop 14 was posted as a cross street only, and stop 15 is an estate sale whose address had not been released yet (the listing names 151st St and Mur-Len), so look for signs. Stop 6 is listed on both sites. The order puts the sales that close at noon, 1pm and 2pm (stops 2, 9, 12 and 13) ahead of the rest. Stop 1 opens at 9am and stop 6 at 10am, so leaving around 8:45 fits. At about 15 minutes per stop, stop 19 (closes 3pm) may be reached after it closes. Left out: one estate sale open by appointment only, seven online-only auctions with no address, and a Kansas City, KS garage sale outside the county.",
+  "note": "Sources: estatesales.net (estate sales) and Craigslist Kansas City (garage sales), checked Oct 16, 2026. Stop 12 was posted as a cross street only, and stop 13 is an estate sale whose address had not been released yet (the listing names 151st St and Mur-Len), so look for signs. Stop 4 is listed on both sites. The order puts the sales that close at noon, 1pm and 2pm (stops 2, 7, 10 and 11) ahead of the rest. Stop 1 opens at 9am and stop 4 at 10am, so leaving around 8:45 fits. At about 15 minutes per stop, stop 17 (closes 3pm) may be reached after it closes. Left out: one estate sale open by appointment only, seven online-only auctions with no address, and a Kansas City, KS garage sale outside the county.",
   "stops": [
     {
       "address": "21400 W 98th Pl, Lenexa",
@@ -27,22 +27,6 @@
       "opens": "8am",
       "closes": "3pm",
       "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/shawnee-garage-sale/oy93g5aUsnYAcmY72uQuAy" }]
-    },
-    {
-      "address": "5146 Lucille Ln, Shawnee",
-      "mapsQuery": "5146 Lucille Ln, Shawnee, KS",
-      "type": "garage",
-      "opens": "9am",
-      "closes": null,
-      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/shawnee-garage-sale-shawnee-ks/6wTp82gbfoX5fZkszsPNbD" }]
-    },
-    {
-      "address": "11424 W 51st Terr, Shawnee",
-      "mapsQuery": "11424 W 51st Terrace, Shawnee, KS",
-      "type": "garage",
-      "opens": "8am",
-      "closes": null,
-      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/shawnee-huge-garage-sale/tP58h1u6KgsCySo35TgpFa" }]
     },
     {
       "address": "10641 Widmer Rd, Lenexa",
