@@ -7,9 +7,11 @@ Routes for visiting estate sales and garage sales in the Kansas City area, one s
 ## Using a route page
 
 1. Open the site and pick a date.
-2. Type where you are starting from in the "Start / end location" box. It defaults to `Current Location`.
-3. Select "Open route in Google Maps" to get directions through every stop and back to your start.
-4. Tick "Visited?" as you go. Visited stops drop out of the Google Maps link, and your ticks are remembered in your browser for that page.
+2. Type where you are starting from in the "Start location" box. It defaults to `Current Location`.
+3. Leave "End location" blank to finish where you started, or type somewhere else.
+4. Pick a "Sale type" to show only estate sales or only garage sales. Hidden sales are left out of the route.
+5. Select "Open route in Google Maps" to get directions through the stops shown.
+6. Tick "Visited?" as you go. Visited stops drop out of the Google Maps link, and your ticks are remembered in your browser for that page.
 
 Each row shows the address, whether it is an estate sale or a garage sale, the opening and closing times for that day, and a link to the original listing on estatesales.net or Craigslist. "not listed" means the posting gave no time.
 

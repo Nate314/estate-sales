@@ -5,6 +5,10 @@ const MAPS_DIR = 'https://www.google.com/maps/dir/';
 const PAGE_NAME = location.pathname.split('/').pop().replace(/\.html$/, '');
 
 const startInput = document.getElementById('start');
+// Pages made before these controls existed have neither; the route then
+// ends at the start and includes every sale type.
+const endInput = document.getElementById('end');
+const typeFilter = document.getElementById('type-filter');
 const routeLinkEl = document.getElementById('route-link');
 
 const el = (tag, props = {}, ...children) => {
@@ -33,8 +37,8 @@ const visitedStore = {
 const encodePlace = place =>
   encodeURIComponent(place.trim()).replace(/%20/g, '+').replace(/%2C/g, ',');
 
-const routeLink = (start, stops) =>
-  MAPS_DIR + [start, ...stops, start].map(encodePlace).join('/') + '/';
+const routeLink = (start, stops, end) =>
+  MAPS_DIR + [start, ...stops, end].map(encodePlace).join('/') + '/';
 
 const timeCell = time =>
   time ? el('td', { textContent: time }) : el('td', { className: 'none', textContent: 'not listed' });
@@ -70,14 +74,21 @@ function stopRow(stop, index, isVisited, onToggle) {
 function renderPage(route) {
   const visited = visitedStore.load();
 
+  const rows = route.stops.map((stop, i) => stopRow(stop, i, visited.has(stop.mapsQuery), onToggle));
+  const shownType = () => typeFilter?.value ?? 'all';
+  const isShown = stop => shownType() === 'all' || stop.type === shownType();
+
   function updateRoute() {
     const start = startInput.value.trim() || startInput.defaultValue;
-    const remaining = route.stops.filter(stop => !visited.has(stop.mapsQuery));
+    const end = endInput?.value.trim() || start;
+    route.stops.forEach((stop, i) => { rows[i].hidden = !isShown(stop); });
+    const shown = route.stops.filter(isShown);
+    const remaining = shown.filter(stop => !visited.has(stop.mapsQuery));
     document.getElementById('progress').textContent =
-      `${route.stops.length - remaining.length} of ${route.stops.length} visited. ` +
-      'The Google Maps link covers the stops not yet visited.';
+      `${shown.length - remaining.length} of ${shown.length} visited. ` +
+      'The Google Maps link covers the stops shown and not yet visited.';
     if (remaining.length) {
-      routeLinkEl.href = routeLink(start, remaining.map(stop => stop.mapsQuery));
+      routeLinkEl.href = routeLink(start, remaining.map(stop => stop.mapsQuery), end);
       routeLinkEl.removeAttribute('aria-disabled');
     } else {
       routeLinkEl.removeAttribute('href');
@@ -96,10 +107,11 @@ function renderPage(route) {
   document.getElementById('heading').textContent = route.heading;
   document.getElementById('summary').textContent = route.summary;
   document.getElementById('note').textContent = route.note;
-  document.getElementById('stops').replaceChildren(
-    ...route.stops.map((stop, i) => stopRow(stop, i, visited.has(stop.mapsQuery), onToggle)));
+  document.getElementById('stops').replaceChildren(...rows);
 
   startInput.addEventListener('input', updateRoute);
+  endInput?.addEventListener('input', updateRoute);
+  typeFilter?.addEventListener('change', updateRoute);
   updateRoute();
 }
 

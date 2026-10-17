@@ -7,8 +7,9 @@ h1 { margin: 0 0 4px; font-size: 1.6rem; }
 .controls { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 16px; }
 .field { display: flex; flex-direction: column; gap: 4px; flex: 1 1 280px; max-width: 480px; }
 .field label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
-.field input { padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; font: inherit; color: inherit; background: var(--card); }
-.field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.field.narrow { flex: 0 1 180px; }
+.field input, .field select { padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; font: inherit; color: inherit; background: var(--card); }
+.field input:focus, .field select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .btn { display: inline-block; padding: 12px 20px; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; }
 .btn:hover { filter: brightness(1.1); }
 .btn[aria-disabled="true"] { background: var(--muted); cursor: not-allowed; }

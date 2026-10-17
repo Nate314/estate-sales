@@ -13,8 +13,20 @@
 
   <div class="controls">
     <div class="field">
-      <label for="start">Start / end location</label>
+      <label for="start">Start location</label>
       <input id="start" type="text" value="Current Location" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="end">End location</label>
+      <input id="end" type="text" placeholder="Same as start" autocomplete="off">
+    </div>
+    <div class="field narrow">
+      <label for="type-filter">Sale type</label>
+      <select id="type-filter">
+        <option value="all">All sales</option>
+        <option value="estate">Estate sales</option>
+        <option value="garage">Garage sales</option>
+      </select>
     </div>
     <a id="route-link" class="btn" target="_blank" rel="noopener">Open route in Google Maps</a>
   </div>
