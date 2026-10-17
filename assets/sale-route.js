@@ -1,10 +1,16 @@
 // Renders a sale route page from the JSON file that sits next to it.
-// route-2026-10-10.html loads route-2026-10-10.json, and the same page name
-// is the localStorage key for that page's visited checkboxes.
+// route-2026-10-10.html loads route-2026-10-10.json. The same page name is
+// the localStorage key for that page's visited checkboxes, and the page name
+// plus "-order" holds the reader's own stop order.
 const MAPS_DIR = 'https://www.google.com/maps/dir/';
 const PAGE_NAME = location.pathname.split('/').pop().replace(/\.html$/, '');
 
 const startInput = document.getElementById('start');
+// A cached copy of an older page can lack these controls; the route then
+// ends at the start, includes every sale type, and has no reset link.
+const endInput = document.getElementById('end');
+const typeFilter = document.getElementById('type-filter');
+const resetOrderBtn = document.getElementById('reset-order');
 const routeLinkEl = document.getElementById('route-link');
 
 const el = (tag, props = {}, ...children) => {
@@ -13,28 +19,84 @@ const el = (tag, props = {}, ...children) => {
   return node;
 };
 
-const visitedStore = {
+// A list of mapsQuery strings kept in localStorage under one key.
+// Storage can be unavailable (private mode); the page still works for this visit.
+const listStore = key => ({
   load() {
     try {
-      return new Set(JSON.parse(localStorage.getItem(PAGE_NAME)) || []);
+      return JSON.parse(localStorage.getItem(key)) || [];
     } catch {
-      return new Set();
+      return [];
     }
   },
-  save(visited) {
+  save(list) {
     try {
-      localStorage.setItem(PAGE_NAME, JSON.stringify([...visited]));
-    } catch {
-      // Storage can be unavailable (private mode); the page still works for this visit.
-    }
+      if (list.length) localStorage.setItem(key, JSON.stringify(list));
+      else localStorage.removeItem(key);
+    } catch {}
   },
-};
+});
+
+const visitedStore = listStore(PAGE_NAME);
+const orderStore = listStore(`${PAGE_NAME}-order`);
+
+// Stops in the reader's saved order. Stops the saved order does not name
+// keep their planned order after the named ones.
+function applyOrder(stops, savedOrder) {
+  const rank = new Map(savedOrder.map((query, i) => [query, i]));
+  const rankOf = stop => rank.get(stop.mapsQuery) ?? savedOrder.length;
+  return [...stops].sort((a, b) => rankOf(a) - rankOf(b));
+}
+
+// Lets rows be dragged by their handle with a mouse or a finger, or moved
+// with the arrow keys while the handle has focus. onMove runs after a move.
+function enableReorder(tbody, onMove) {
+  let dragging = null;
+  const finish = () => {
+    if (!dragging) return;
+    dragging.classList.remove('dragging');
+    dragging = null;
+    onMove();
+  };
+  tbody.addEventListener('pointerdown', e => {
+    const handle = e.target.closest('.handle');
+    if (!handle) return;
+    e.preventDefault();
+    dragging = handle.closest('tr');
+    dragging.classList.add('dragging');
+    handle.setPointerCapture(e.pointerId);
+  });
+  tbody.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    if (e.clientY < 60) window.scrollBy(0, -12);
+    else if (e.clientY > window.innerHeight - 60) window.scrollBy(0, 12);
+    const over = document.elementFromPoint(e.clientX, e.clientY)?.closest('tr');
+    if (!over || over === dragging || over.parentNode !== tbody) return;
+    const { top, height } = over.getBoundingClientRect();
+    tbody.insertBefore(dragging, e.clientY < top + height / 2 ? over : over.nextSibling);
+  });
+  tbody.addEventListener('pointerup', finish);
+  tbody.addEventListener('pointercancel', finish);
+  tbody.addEventListener('keydown', e => {
+    const handle = e.target.closest('.handle');
+    if (!handle || (e.key !== 'ArrowUp' && e.key !== 'ArrowDown')) return;
+    e.preventDefault();
+    const row = handle.closest('tr');
+    const step = e.key === 'ArrowUp' ? 'previousElementSibling' : 'nextElementSibling';
+    let target = row[step];
+    while (target?.hidden) target = target[step];
+    if (!target) return;
+    tbody.insertBefore(row, e.key === 'ArrowUp' ? target : target.nextSibling);
+    handle.focus();
+    onMove();
+  });
+}
 
 const encodePlace = place =>
   encodeURIComponent(place.trim()).replace(/%20/g, '+').replace(/%2C/g, ',');
 
-const routeLink = (start, stops) =>
-  MAPS_DIR + [start, ...stops, start].map(encodePlace).join('/') + '/';
+const routeLink = (start, stops, end) =>
+  MAPS_DIR + [start, ...stops, end].map(encodePlace).join('/') + '/';
 
 const timeCell = time =>
   time ? el('td', { textContent: time }) : el('td', { className: 'none', textContent: 'not listed' });
@@ -52,9 +114,11 @@ function stopRow(stop, index, isVisited, onToggle) {
   const checkbox = el('input', { type: 'checkbox', checked: isVisited });
   checkbox.setAttribute('aria-label', `Visited ${stop.address}`);
   const typeLabel = stop.type === 'estate' ? 'Estate' : 'Garage';
+  const handle = el('button', { type: 'button', className: 'handle', textContent: '⠿', title: 'Drag to reorder' });
+  handle.setAttribute('aria-label', `Move ${stop.address} (drag, or use the up and down arrow keys)`);
   const row = el('tr', { className: isVisited ? 'visited' : '' },
     el('td', { className: 'check' }, checkbox),
-    el('td', { className: 'num', textContent: index + 1 }),
+    el('td', { className: 'num' }, handle, String(index + 1)),
     el('td', { className: 'addr', textContent: stop.address }),
     el('td', {}, el('span', { className: `tag ${stop.type}`, textContent: typeLabel })),
     timeCell(stop.opens),
@@ -68,16 +132,41 @@ function stopRow(stop, index, isVisited, onToggle) {
 }
 
 function renderPage(route) {
-  const visited = visitedStore.load();
+  const visited = new Set(visitedStore.load());
+  const tbody = document.getElementById('stops');
+
+  // Rows keep the planned stop number; the reader's order only moves them.
+  const rowOf = new Map(route.stops.map((stop, i) =>
+    [stop, stopRow(stop, i, visited.has(stop.mapsQuery), onToggle)]));
+  const stopOf = new Map([...rowOf].map(([stop, row]) => [row, stop]));
+  let order = applyOrder(route.stops, orderStore.load());
+
+  const shownType = () => typeFilter?.value ?? 'all';
+  const isShown = stop => shownType() === 'all' || stop.type === shownType();
+
+  function saveOrder() {
+    const isPlanned = order.every((stop, i) => stop === route.stops[i]);
+    orderStore.save(isPlanned ? [] : order.map(stop => stop.mapsQuery));
+    if (resetOrderBtn) resetOrderBtn.hidden = isPlanned;
+  }
+
+  function showOrder() {
+    tbody.replaceChildren(...order.map(stop => rowOf.get(stop)));
+    saveOrder();
+    updateRoute();
+  }
 
   function updateRoute() {
     const start = startInput.value.trim() || startInput.defaultValue;
-    const remaining = route.stops.filter(stop => !visited.has(stop.mapsQuery));
+    const end = endInput?.value.trim() || start;
+    order.forEach(stop => { rowOf.get(stop).hidden = !isShown(stop); });
+    const shown = order.filter(isShown);
+    const remaining = shown.filter(stop => !visited.has(stop.mapsQuery));
     document.getElementById('progress').textContent =
-      `${route.stops.length - remaining.length} of ${route.stops.length} visited. ` +
-      'The Google Maps link covers the stops not yet visited.';
+      `${shown.length - remaining.length} of ${shown.length} visited. ` +
+      'The Google Maps link covers the stops shown and not yet visited.';
     if (remaining.length) {
-      routeLinkEl.href = routeLink(start, remaining.map(stop => stop.mapsQuery));
+      routeLinkEl.href = routeLink(start, remaining.map(stop => stop.mapsQuery), end);
       routeLinkEl.removeAttribute('aria-disabled');
     } else {
       routeLinkEl.removeAttribute('href');
@@ -88,7 +177,7 @@ function renderPage(route) {
   function onToggle(stop, isVisited) {
     if (isVisited) visited.add(stop.mapsQuery);
     else visited.delete(stop.mapsQuery);
-    visitedStore.save(visited);
+    visitedStore.save([...visited]);
     updateRoute();
   }
 
@@ -96,11 +185,21 @@ function renderPage(route) {
   document.getElementById('heading').textContent = route.heading;
   document.getElementById('summary').textContent = route.summary;
   document.getElementById('note').textContent = route.note;
-  document.getElementById('stops').replaceChildren(
-    ...route.stops.map((stop, i) => stopRow(stop, i, visited.has(stop.mapsQuery), onToggle)));
+
+  enableReorder(tbody, () => {
+    order = [...tbody.rows].map(row => stopOf.get(row));
+    saveOrder();
+    updateRoute();
+  });
+  resetOrderBtn?.addEventListener('click', () => {
+    order = [...route.stops];
+    showOrder();
+  });
+  showOrder();
 
   startInput.addEventListener('input', updateRoute);
-  updateRoute();
+  endInput?.addEventListener('input', updateRoute);
+  typeFilter?.addEventListener('change', updateRoute);
 }
 
 fetch(`${PAGE_NAME}.json`)

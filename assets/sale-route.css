@@ -7,10 +7,12 @@ h1 { margin: 0 0 4px; font-size: 1.6rem; }
 .controls { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 16px; }
 .field { display: flex; flex-direction: column; gap: 4px; flex: 1 1 280px; max-width: 480px; }
 .field label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
-.field input { padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; font: inherit; color: inherit; background: var(--card); }
-.field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.field.narrow { flex: 0 1 180px; }
+.field input, .field select { padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; font: inherit; color: inherit; background: var(--card); }
+.field input:focus, .field select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
 .btn { display: inline-block; padding: 12px 20px; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; }
 .btn:hover { filter: brightness(1.1); }
+.link { padding: 0; border: 0; background: none; font: inherit; color: var(--accent); text-decoration: underline; cursor: pointer; }
 .btn[aria-disabled="true"] { background: var(--muted); cursor: not-allowed; }
 td.check input { width: 20px; height: 20px; margin: 0; vertical-align: middle; accent-color: var(--accent); cursor: pointer; }
 tr.visited td:not(.check) { opacity: 0.45; }
@@ -22,6 +24,10 @@ td.addr { white-space: normal; min-width: 220px; }
 th { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
 tr:last-child td { border-bottom: 0; }
 td.num { color: var(--muted); font-variant-numeric: tabular-nums; }
+.handle { margin: 0 8px 0 -6px; padding: 4px 6px; border: 0; border-radius: 6px; background: none; color: var(--muted); font-size: 1.1rem; line-height: 1; cursor: grab; touch-action: none; }
+.handle:hover, .handle:focus-visible { background: var(--bg); color: var(--text); }
+.handle:active { cursor: grabbing; }
+tr.dragging { background: var(--bg); box-shadow: inset 3px 0 0 var(--accent); }
 td a:not(.btn) { color: var(--accent); }
 .tag { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 0.85rem; font-weight: 600; color: #fff; }
 .estate { background: var(--estate); }

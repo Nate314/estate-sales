@@ -2,50 +2,15 @@
   "title": "Sale Route: Sat, Oct 17, 2026",
   "heading": "Sale Route: Saturday, Oct 17, 2026",
   "summary": "Estate and garage sales in Johnson County.",
-  "note": "Sources: estatesales.net (estate sales) and Craigslist Kansas City (garage sales), checked Oct 16, 2026. Stop 12 was posted as a cross street only, and stop 13 is an estate sale whose address had not been released yet (the listing names 151st St and Mur-Len), so look for signs. Stop 4 is listed on both sites. The order puts the sales that close at noon, 1pm and 2pm (stops 2, 7, 10 and 11) ahead of the rest. Stop 1 opens at 9am and stop 4 at 10am, so leaving around 8:45 fits. At about 15 minutes per stop, stop 17 (closes 3pm) may be reached after it closes. Left out: one estate sale open by appointment only, seven online-only auctions with no address, and a Kansas City, KS garage sale outside the county.",
+  "note": "Sources: estatesales.net (estate sales) and Craigslist Kansas City (garage sales), checked Oct 16, 2026. Stop 7 was posted as a cross street only, and stop 9 is an estate sale whose address had not been released yet (the listing names 151st St and Mur-Len), so look for signs. Stop 15 is listed on both sites. The order puts the sales that close at noon, 1pm and 2pm (stops 1, 4, 8 and 10) early. Leaving at 9am and spending about 15 minutes per stop should reach every sale at least an hour before it closes. Left out: one estate sale open by appointment only, seven online-only auctions with no address, and a Kansas City, KS garage sale outside the county.",
   "stops": [
     {
-      "address": "21400 W 98th Pl, Lenexa",
-      "mapsQuery": "21400 W 98th Pl, Lenexa, KS 66220",
+      "address": "8105 W 97th Terrace, Overland Park",
+      "mapsQuery": "8105 W 97th Terrace, Overland Park, KS 66212",
       "type": "estate",
       "opens": "9am",
-      "closes": "3pm",
-      "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Lenexa/66220/5116023" }]
-    },
-    {
-      "address": "6655 Park St, Shawnee",
-      "mapsQuery": "6655 Park St, Shawnee, KS 66216",
-      "type": "garage",
-      "opens": "8am",
-      "closes": "12pm",
-      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/shawnee-shawnee-garage-sale/jZBobGjEwFyFmuZHQAj7sP" }]
-    },
-    {
-      "address": "12602 W 69th St, Shawnee",
-      "mapsQuery": "12602 W 69th St, Shawnee, KS 66216",
-      "type": "garage",
-      "opens": "8am",
-      "closes": "3pm",
-      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/shawnee-garage-sale/oy93g5aUsnYAcmY72uQuAy" }]
-    },
-    {
-      "address": "10641 Widmer Rd, Lenexa",
-      "mapsQuery": "10641 Widmer Rd, Lenexa, KS 66215",
-      "type": "estate",
-      "opens": "10am",
-      "closes": "4pm",
-      "listings": [
-        { "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Lenexa/66215/5115093" },
-        { "label": "Craigslist", "url": "https://www.craigslist.org/view/d/lenexa-remodeling-staging-business/c5DJEPoH3L2uq58UajAHCz" }
-      ]
-    },
-    {
-      "address": "11049 W 97th Cir, Overland Park",
-      "mapsQuery": "11049 W 97th Cir, Overland Park, KS 66214",
-      "type": "estate",
-      "opens": "8am",
-      "closes": "4pm",
-      "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Overland-Park/66214/5098218" }]
+      "closes": "1pm",
+      "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Overland-Park/66212/5095218" }]
     },
     {
       "address": "8405 W 88th Terrace, Overland Park",
@@ -56,44 +21,36 @@
       "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/overland-park-multi-family-yard-sale/1Z8T82vyoMtAcnRSE3A4PR" }]
     },
     {
-      "address": "8105 W 97th Terrace, Overland Park",
-      "mapsQuery": "8105 W 97th Terrace, Overland Park, KS 66212",
+      "address": "12602 W 69th St, Shawnee",
+      "mapsQuery": "12602 W 69th St, Shawnee, KS 66216",
+      "type": "garage",
+      "opens": "8am",
+      "closes": "3pm",
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/shawnee-garage-sale/oy93g5aUsnYAcmY72uQuAy" }]
+    },
+    {
+      "address": "6655 Park St, Shawnee",
+      "mapsQuery": "6655 Park St, Shawnee, KS 66216",
+      "type": "garage",
+      "opens": "8am",
+      "closes": "12pm",
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/shawnee-shawnee-garage-sale/jZBobGjEwFyFmuZHQAj7sP" }]
+    },
+    {
+      "address": "21400 W 98th Pl, Lenexa",
+      "mapsQuery": "21400 W 98th Pl, Lenexa, KS 66220",
       "type": "estate",
       "opens": "9am",
-      "closes": "1pm",
-      "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Overland-Park/66212/5095218" }]
+      "closes": "3pm",
+      "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Lenexa/66220/5116023" }]
     },
     {
-      "address": "4005 W 102nd St, Overland Park",
-      "mapsQuery": "4005 W 102nd St, Overland Park, KS",
+      "address": "702 E Cothrell St, Olathe",
+      "mapsQuery": "702 E Cothrell St, Olathe, KS 66061",
       "type": "garage",
-      "opens": "10am",
-      "closes": "5pm",
-      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/overland-park-garage-sale-fri-and-sat/2Ha1G6rrmxNfKCXjE8eQp8" }]
-    },
-    {
-      "address": "2700 W 118th St, Leawood",
-      "mapsQuery": "2700 W 118th St, Leawood, KS",
-      "type": "garage",
-      "opens": "sunrise",
-      "closes": null,
-      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/leawood-annual-gerbel-family-garage-sale/5YZHVrvR3895e262t2Des8" }]
-    },
-    {
-      "address": "15212 S Greenwood, Unit 2000, Olathe",
-      "mapsQuery": "15212 S Greenwood St, Olathe, KS 66062",
-      "type": "estate",
       "opens": "8am",
-      "closes": "2pm",
-      "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Olathe/66062/5083404" }]
-    },
-    {
-      "address": "16067 S Brookfield St, Olathe",
-      "mapsQuery": "16067 S Brookfield St, Olathe, KS 66062",
-      "type": "estate",
-      "opens": "10am",
-      "closes": "2pm",
-      "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Olathe/66062/5113518" }]
+      "closes": null,
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/olathe-name-brand-garage-sale/vL8dMyJrTwbr8udTqGZLaJ" }]
     },
     {
       "address": "S Brentwood St & 158th St, Olathe",
@@ -104,12 +61,28 @@
       "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/olathe-downsizing-garage-sale/uoAhmo2HoUv7q4LJRZhDFR" }]
     },
     {
+      "address": "16067 S Brookfield St, Olathe",
+      "mapsQuery": "16067 S Brookfield St, Olathe, KS 66062",
+      "type": "estate",
+      "opens": "10am",
+      "closes": "2pm",
+      "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Olathe/66062/5113518" }]
+    },
+    {
       "address": "151st St & Mur-Len Rd, Olathe (address not yet released)",
       "mapsQuery": "W 151st St and Mur-Len Rd, Olathe, KS",
       "type": "estate",
       "opens": "8am",
       "closes": "4pm",
       "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Olathe/66062/5105379" }]
+    },
+    {
+      "address": "15212 S Greenwood, Unit 2000, Olathe",
+      "mapsQuery": "15212 S Greenwood St, Olathe, KS 66062",
+      "type": "estate",
+      "opens": "8am",
+      "closes": "2pm",
+      "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Olathe/66062/5083404" }]
     },
     {
       "address": "13811 S Acuff St, Olathe",
@@ -144,12 +117,39 @@
       "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Overland-Park/66213/5115966" }]
     },
     {
-      "address": "702 E Cothrell St, Olathe",
-      "mapsQuery": "702 E Cothrell St, Olathe, KS 66061",
-      "type": "garage",
+      "address": "10641 Widmer Rd, Lenexa",
+      "mapsQuery": "10641 Widmer Rd, Lenexa, KS 66215",
+      "type": "estate",
+      "opens": "10am",
+      "closes": "4pm",
+      "listings": [
+        { "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Lenexa/66215/5115093" },
+        { "label": "Craigslist", "url": "https://www.craigslist.org/view/d/lenexa-remodeling-staging-business/c5DJEPoH3L2uq58UajAHCz" }
+      ]
+    },
+    {
+      "address": "11049 W 97th Cir, Overland Park",
+      "mapsQuery": "11049 W 97th Cir, Overland Park, KS 66214",
+      "type": "estate",
       "opens": "8am",
+      "closes": "4pm",
+      "listings": [{ "label": "EstateSales.net", "url": "https://www.estatesales.net/KS/Overland-Park/66214/5098218" }]
+    },
+    {
+      "address": "4005 W 102nd St, Overland Park",
+      "mapsQuery": "4005 W 102nd St, Overland Park, KS",
+      "type": "garage",
+      "opens": "10am",
+      "closes": "5pm",
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/overland-park-garage-sale-fri-and-sat/2Ha1G6rrmxNfKCXjE8eQp8" }]
+    },
+    {
+      "address": "2700 W 118th St, Leawood",
+      "mapsQuery": "2700 W 118th St, Leawood, KS",
+      "type": "garage",
+      "opens": "sunrise",
       "closes": null,
-      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/olathe-name-brand-garage-sale/vL8dMyJrTwbr8udTqGZLaJ" }]
+      "listings": [{ "label": "Craigslist", "url": "https://www.craigslist.org/view/d/leawood-annual-gerbel-family-garage-sale/5YZHVrvR3895e262t2Des8" }]
     }
   ]
 }
