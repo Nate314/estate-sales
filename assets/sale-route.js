@@ -6,8 +6,8 @@ const MAPS_DIR = 'https://www.google.com/maps/dir/';
 const PAGE_NAME = location.pathname.split('/').pop().replace(/\.html$/, '');
 
 const startInput = document.getElementById('start');
-// Pages made before these controls existed lack them; the route then ends
-// at the start, includes every sale type, and has no reset button.
+// A cached copy of an older page can lack these controls; the route then
+// ends at the start, includes every sale type, and has no reset link.
 const endInput = document.getElementById('end');
 const typeFilter = document.getElementById('type-filter');
 const resetOrderBtn = document.getElementById('reset-order');

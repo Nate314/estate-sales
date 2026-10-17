@@ -9,12 +9,24 @@
 <body>
 <main>
   <h1 id="heading"></h1>
-  <p class="sub"><span id="summary"></span> <span id="progress"></span></p>
+  <p class="sub"><span id="summary"></span> <span id="progress"></span> <button id="reset-order" class="link" type="button" hidden>Reset to the planned order</button></p>
 
   <div class="controls">
     <div class="field">
-      <label for="start">Start / end location</label>
+      <label for="start">Start location</label>
       <input id="start" type="text" value="Current Location" autocomplete="off">
+    </div>
+    <div class="field">
+      <label for="end">End location</label>
+      <input id="end" type="text" placeholder="Same as start" autocomplete="off">
+    </div>
+    <div class="field narrow">
+      <label for="type-filter">Sale type</label>
+      <select id="type-filter">
+        <option value="all">All sales</option>
+        <option value="estate">Estate sales</option>
+        <option value="garage">Garage sales</option>
+      </select>
     </div>
     <a id="route-link" class="btn" target="_blank" rel="noopener">Open route in Google Maps</a>
   </div>
