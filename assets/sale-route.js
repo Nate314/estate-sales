@@ -1,7 +1,8 @@
 // Renders a sale route page from the JSON file that sits next to it.
 // route-2026-10-10.html loads route-2026-10-10.json. The same page name is
 // the localStorage key for that page's visited checkboxes, and the page name
-// plus "-order" holds the reader's own stop order.
+// plus "-order" holds the reader's own stop order. The start, end and sale
+// type are shared by every route page under "route-settings".
 const MAPS_DIR = 'https://www.google.com/maps/dir/';
 const PAGE_NAME = location.pathname.split('/').pop().replace(/\.html$/, '');
 
@@ -19,26 +20,55 @@ const el = (tag, props = {}, ...children) => {
   return node;
 };
 
-// A list of mapsQuery strings kept in localStorage under one key.
-// Storage can be unavailable (private mode); the page still works for this visit.
-const listStore = key => ({
+// A JSON value kept in localStorage under one key. Saving the empty value
+// removes the key. Storage can be unavailable (private mode); the page still
+// works for this visit.
+const jsonStore = (key, empty) => ({
   load() {
     try {
-      return JSON.parse(localStorage.getItem(key)) || [];
+      return JSON.parse(localStorage.getItem(key)) ?? empty;
     } catch {
-      return [];
+      return empty;
     }
   },
-  save(list) {
+  save(value) {
     try {
-      if (list.length) localStorage.setItem(key, JSON.stringify(list));
-      else localStorage.removeItem(key);
+      const json = JSON.stringify(value);
+      if (json === JSON.stringify(empty)) localStorage.removeItem(key);
+      else localStorage.setItem(key, json);
     } catch {}
   },
 });
 
-const visitedStore = listStore(PAGE_NAME);
-const orderStore = listStore(`${PAGE_NAME}-order`);
+const visitedStore = jsonStore(PAGE_NAME, []);
+const orderStore = jsonStore(`${PAGE_NAME}-order`, []);
+const settingsStore = jsonStore('route-settings', {});
+
+// Puts back the start, end and sale type the reader last chose.
+function restoreSettings() {
+  const saved = settingsStore.load();
+  if (saved.start) startInput.value = saved.start;
+  if (endInput && saved.end) endInput.value = saved.end;
+  if (typeFilter && [...typeFilter.options].some(option => option.value === saved.type)) {
+    typeFilter.value = saved.type;
+  }
+}
+
+// Keeps only what differs from the page defaults.
+function saveSettings() {
+  const settings = {};
+  const start = startInput.value.trim();
+  if (start && start !== startInput.defaultValue) settings.start = start;
+  const end = endInput?.value.trim();
+  if (end) settings.end = end;
+  if (typeFilter && typeFilter.value !== 'all') settings.type = typeFilter.value;
+  settingsStore.save(settings);
+}
+
+restoreSettings();
+startInput.addEventListener('input', saveSettings);
+endInput?.addEventListener('input', saveSettings);
+typeFilter?.addEventListener('change', saveSettings);
 
 // Stops in the reader's saved order. Stops the saved order does not name
 // keep their planned order after the named ones.
