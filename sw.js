@@ -14,7 +14,8 @@ const SHELL = [
 ];
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)));
+  event.waitUntil(caches.open(CACHE).then(cache =>
+    cache.addAll(SHELL.map(path => new Request(path, { cache: 'no-cache' })))));
   self.skipWaiting();
 });
 
@@ -27,8 +28,10 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const request = event.request;
   if (request.method !== 'GET' || new URL(request.url).origin !== location.origin) return;
+  // GitHub Pages lets browsers reuse files for 10 minutes; "no-cache" makes
+  // the browser check with the server first, so a new deploy shows at once.
   event.respondWith(
-    fetch(request)
+    fetch(request, { cache: 'no-cache' })
       .then(response => {
         if (response.ok) {
           const copy = response.clone();

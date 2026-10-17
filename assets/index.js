@@ -11,7 +11,7 @@ const dateSection = date =>
     el('ul', {}, ...date.pages.map(page =>
       el('li', {}, el('a', { href: page.path, textContent: page.title })))));
 
-fetch('pages.json')
+fetch('pages.json', { cache: 'no-cache' })
   .then(response => {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     return response.json();
