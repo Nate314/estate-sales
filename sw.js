@@ -10,6 +10,7 @@ const SHELL = [
   'assets/sale-route.js',
   'assets/index.js',
   'assets/app.js',
+  'assets/theme.js',
   'assets/icon-192.png',
 ];
 

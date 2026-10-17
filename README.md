@@ -16,6 +16,8 @@ Routes for visiting estate sales and garage sales in the Kansas City area, one s
 
 Your start, end and sale type are remembered in your browser and apply to every date's route.
 
+The round button in the top corner switches between light and dark mode (🌙 / ☀️). Your choice is remembered.
+
 Each route page links back to the list of all routes, and to the other pages for the same date.
 
 Each row shows the address, whether it is an estate sale or a garage sale, the opening and closing times for that day, and a link to the original listing on estatesales.net or Craigslist. "not listed" means the posting gave no time.
